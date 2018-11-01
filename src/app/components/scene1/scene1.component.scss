@@ -8,10 +8,12 @@
 .main {
   margin: auto;
   border: 2px solid rgba(0, 0, 0, .7);
-  width: 80vw;
-  height: 90vh;
   position: relative;
   overflow: hidden;
+  // width: 80vw;
+  // height: 90vh;
+  max-width: 1060px;
+  max-height: 600px;
 
   background: rgba(255, 255, 255, 0.7);
 
@@ -49,6 +51,15 @@
   // .cloud {
   //   animation: fade-in 1s both 2.5s;
   // }
+}
+
+.title {
+  font-family: 'Titillium Web', sans-serif;
+  position: absolute;
+  top: 4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10rem;
 }
 
 @keyframes slide {
