@@ -22,23 +22,20 @@
   //   height: 100%;
   // }
 
-  .layer {
-    position: absolute;
-    // width: 100%;
-    // height: 100%;
-    // bottom: 0;
-    // left: 0;
-  }
-
   img {
     width: 100%;
     transform: scale(1.6);
   }
 
-  .cloud {
+  .layer--front {
+    animation: fade-trans-in 4s ease-out both .5s;
+  }
+
+  .layer--cloud {
     display: flex !important;
     flex-wrap: nowrap;
     opacity: .5;
+    animation: fade-trans-in 4s ease-out both 2s;
 
     img {
       // width: 100%;
@@ -53,13 +50,22 @@
   // }
 }
 
-.title {
-  font-family: 'Titillium Web', sans-serif;
+.title-wrapper {
   position: absolute;
   top: 4rem;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 10rem;
+  text-align: center;
+  width: 100%;
+  animation: fade-trans-zoom-in 5s ease-out both .5s;
+  // animation: fade-trans-zoom-in 5s ease-out both 1.2s;
+
+  .title {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 10rem;
+  }
+}
+
+.rain {
+  animation: fade-trans-zoom-in 5s ease-out both 2s;
 }
 
 @keyframes slide {
@@ -69,6 +75,30 @@
 
   100% {
     transform: translate3d(0, 0, 0) scale(1.6);
+  }
+}
+
+@keyframes fade-trans-zoom-in {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 2rem, 0) scale(.9);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes fade-trans-in {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 2rem, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }
 
